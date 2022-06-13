@@ -1,0 +1,23 @@
+dbt_training:
+  outputs:
+    dev:
+      account: zv82326.eu-central-1
+      database: ANALYTICS_DEV
+      password: Snowtony89$
+      role: DBT_TRAINING
+      schema: dbt_sha
+      threads: 1
+      type: snowflake
+      user: SHARMADHA
+      warehouse: DBT_TRAINING_WH
+    prod: 
+      account: zv82326.eu-central-1
+      database: ANALYTICS
+      password: Snowtony89$
+      role: DBT_TRAINING
+      schema: dbt_sha
+      threads: 1
+      type: snowflake
+      user: SHARMADHA
+      warehouse: DBT_TRAINING_WH   
+  target: dev
