@@ -23,7 +23,11 @@ target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
-
+vars:
+  default_string: 'N/A'
+  
+seeds:
+  +schema: public  
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -37,3 +41,9 @@ models:
     staging:
       +materialized: view
       +schema: staging
+    marts:
+      +materialized: table
+      warehouse:
+        +schema: warehouse
+      reporting:
+        +schema: reporting
